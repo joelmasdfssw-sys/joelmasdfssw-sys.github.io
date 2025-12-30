@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蛋鲜森详情页 AI 升级 SOP 精准信息图</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .tool-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin: 2px;
+            background: #E2E8F0;
+            color: #475569;
+        }
+        .tool-tag-highlight {
+            background: #FFD700;
+            color: #001F3F;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- 页眉 -->
+    <header class="bg-[#001F3F] text-white py-12 px-4 shadow-lg border-b-4 border-[#FFD700]">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[#FFD700]">蛋鲜森 AI 详情页全流程 SOP</h1>
+            <h2 class="text-xl md:text-2xl font-light opacity-90">基于 Gemini Gem 策略与 NotebookLM 集成的闭环工作流</h2>
+            <p class="mt-6 max-w-2xl mx-auto text-slate-300">
+                以结构意识为核心，整合全球顶尖 AI 素材工具，通过“策略-素材-集成-精修”产出投放级电商详情页。
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- 第 1 部分：全能 AI 工具矩阵 -->
+        <section class="bg-white rounded-xl shadow-md p-6 md:col-span-2">
+            <div class="border-l-4 border-[#FFD700] pl-4 mb-6">
+                <h3 class="text-2xl font-bold text-[#001F3F]">全能 AI 工具矩阵</h3>
+                <p class="text-slate-600 mt-2">不仅是简单的提示词生成，而是多工具联动的素材仓库与修正体系。</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1 space-y-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <strong class="block text-lg text-[#001F3F]">策略阵地 (Brain)</strong>
+                        <div class="mt-2">
+                            <span class="tool-tag tool-tag-highlight">Gemini Gem (主)</span>
+                            <span class="tool-tag">Gemini / GPT 辅助</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">输入旧文案与新卖点，输出三位一体提示词及文案逻辑。</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <strong class="block text-lg text-[#001F3F]">素材/优化 (Assets)</strong>
+                        <div class="mt-2 flex flex-wrap">
+                            <span class="tool-tag">即梦</span> <span class="tool-tag">豆包</span>
+                            <span class="tool-tag">PS/可画插件</span> <span class="tool-tag">Nano Banana</span>
+                            <span class="tool-tag">Gemini</span> <span class="tool-tag">GPT 直接调用 PS/可画</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">生成底图、所需素材图片并进行文案深度优化。</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <strong class="block text-lg text-[#001F3F]">集成输出 (Hub)</strong>
+                        <div class="mt-2">
+                            <span class="tool-tag tool-tag-highlight">NotebookLM</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-2">汇聚所有素材、文案与逻辑，生成最终 PPT 初稿。</p>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <div class="chart-container">
+                        <canvas id="toolMatrixChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第 2 部分：精准工作流 (SOP) -->
+        <section class="bg-white rounded-xl shadow-md p-6 md:col-span-2">
+            <div class="border-l-4 border-[#001F3F] pl-4 mb-8">
+                <h3 class="text-2xl font-bold text-[#001F3F]">详情页升级精准 SOP 流程</h3>
+                <p class="text-slate-600 mt-2">从策略制定、素材准备到最终商业级成品的闭环路径。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- 步骤 1 -->
+                <div class="bg-blue-50 p-6 rounded-lg border-t-4 border-[#001F3F] relative">
+                    <div class="absolute -top-3 left-4 bg-[#001F3F] text-white text-xs px-2 py-1 rounded">第 1 步</div>
+                    <h4 class="font-bold text-lg mb-2 text-[#001F3F]">策略策划</h4>
+                    <p class="text-xs text-slate-600">在 <strong>Gemini Gem</strong> 中输入旧文案与新卖点，制定“三位一体”提示词。（辅助工具包括 Gemini、GPT 等）</p>
+                    <div class="mt-4 p-2 bg-white rounded text-[10px] text-blue-800">输出：核心逻辑与绘图脚本</div>
+                </div>
+
+                <!-- 步骤 2 -->
+                <div class="bg-slate-50 p-6 rounded-lg border-t-4 border-slate-400 relative">
+                    <div class="absolute -top-3 left-4 bg-slate-400 text-white text-xs px-2 py-1 rounded">第 2 步</div>
+                    <h4 class="font-bold text-lg mb-2 text-slate-700">多维素材生成</h4>
+                    <p class="text-xs text-slate-600">利用 <strong>Gemini/GPT/即梦/豆包/Nano Banana/可画/PS</strong> 等工具，生成底图、素材图并优化文案。</p>
+                    <div class="mt-4 p-2 bg-white rounded text-[10px] text-slate-800">产出：高质量图片素材、优化文案</div>
+                </div>
+
+                <!-- 步骤 3 -->
+                <div class="bg-yellow-50 p-6 rounded-lg border-t-4 border-[#FFD700] relative">
+                    <div class="absolute -top-3 left-4 bg-[#FFD700] text-[#001F3F] text-xs px-2 py-1 rounded font-bold">第 3 步</div>
+                    <h4 class="font-bold text-lg mb-2 text-[#001F3F]">集成初稿</h4>
+                    <p class="text-xs text-slate-600">将策略、文案与素材喂给 <strong>NotebookLM</strong>，利用其 PPT 功能生成详情页初稿。</p>
+                    <div class="mt-4 p-2 bg-white rounded text-[10px] text-yellow-800 font-bold">状态：老板/主管 审核同意</div>
+                </div>
+
+                <!-- 步骤 4 -->
+                <div class="bg-green-50 p-6 rounded-lg border-t-4 border-green-600 relative">
+                    <div class="absolute -top-3 left-4 bg-green-600 text-white text-xs px-2 py-1 rounded">第 4 步</div>
+                    <h4 class="font-bold text-lg mb-2 text-green-700">尺寸细节精修</h4>
+                    <p class="text-xs text-slate-600">通过 <strong>人工 + AI 辅助</strong> 修正尺寸、微调光影，打磨细节，产出最终投放主图。</p>
+                    <div class="mt-4 p-2 bg-white rounded text-[10px] text-green-800 font-bold">终点：投入平台使用的商业详情页</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第 3 部分：信任锚点与受众匹配 -->
+        <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="border-l-4 border-[#FFD700] pl-4 mb-6">
+                <h3 class="text-2xl font-bold text-[#001F3F]">受众信任重构分析</h3>
+                <p class="text-slate-600 mt-2">针对江浙沪精致妈妈与都市银发族的转化关键点。</p>
+            </div>
+            <div class="chart-container">
+                <canvas id="audienceTrustChart"></canvas>
+            </div>
+        </section>
+
+        <!-- 第 4 部分：品牌视觉标准 -->
+        <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="border-l-4 border-[#001F3F] pl-4 mb-6">
+                <h3 class="text-2xl font-bold text-[#001F3F]">打磨与精修标准</h3>
+                <p class="text-slate-600 mt-2">最后阶段确保“商业级”产出的核心准则。</p>
+            </div>
+            <div class="space-y-4">
+                <div class="p-4 bg-slate-50 border-l-4 border-[#FFD700]">
+                    <h5 class="font-bold text-sm text-[#001F3F]">尺寸修正 (人工为主)</h5>
+                    <p class="text-xs text-slate-600 mt-1">根据各电商平台（天猫/抖音）比例人工微调，确保排版在手机端不被裁切。</p>
+                </div>
+                <div class="p-4 bg-slate-50 border-l-4 border-[#001F3F]">
+                    <h5 class="font-bold text-sm text-[#001F3F]">细节打磨 (AI 辅助)</h5>
+                    <p class="text-xs text-slate-600 mt-1">利用 PS AI 填充或修图工具增强光影细节、提升蛋液及食材的诱人质感。</p>
+                </div>
+                <div class="p-4 bg-slate-50 border-l-4 border-slate-400">
+                    <h5 class="font-bold text-sm text-slate-700">终审上线</h5>
+                    <p class="text-xs text-slate-600 mt-1">确认文案“结构意识”落实到位，信任钩子（如国企、无抗）在关键位置醒目展示。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#001F3F] text-slate-400 py-8 text-center">
+        <p class="mb-2">蛋鲜森品牌详情页 AI 升级内部指南</p>
+        <p class="text-xs italic">策略主导：Gemini Gem • 集成核心：NotebookLM • 素材生成：Multi-AI工具链</p>
+    </footer>
+
+    <script>
+        // --- 可视化逻辑 (HTML 注释总结):
+        // 1. 任务贡献分布: 柱状图展示各阶段的重要程度
+        // 2. 信任维度权重: 极坐标图展示针对目标受众的信任点
+        // ---
+
+        function formatLabel(str, maxwidth) {
+            if (typeof str !== 'string' || str.length <= maxwidth) return str;
+            const sections = [];
+            let tempLine = '';
+            for (let i = 0; i < str.length; i++) {
+                tempLine += str[i];
+                if (tempLine.length >= maxwidth) {
+                    sections.push(tempLine);
+                    tempLine = '';
+                }
+            }
+            if (tempLine) sections.push(tempLine);
+            return sections;
+        }
+
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join('') : label;
+                        }
+                    }
+                }
+            }
+        };
+
+        // 1. 工具矩阵权重分布
+        const ctxMatrix = document.getElementById('toolMatrixChart').getContext('2d');
+        new Chart(ctxMatrix, {
+            type: 'bar',
+            data: {
+                labels: ['策略策划 (Gemini)', '素材准备 (GPT/即梦/PS等)', '集成输出 (NotebookLM)', '细节修正 (人工+AI)'],
+                datasets: [{
+                    label: '生产力占比 (%)',
+                    data: [30, 40, 20, 10],
+                    backgroundColor: ['#001F3F', '#64748B', '#FFD700', '#166534'],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: { y: { beginAtZero: true, max: 100 } }
+            }
+        });
+
+        // 2. 受众信任关注点
+        const ctxTrust = document.getElementById('audienceTrustChart').getContext('2d');
+        const trustLabels = ['4年无抗养殖', '国企背书认证', '10年初心历史', '万寿菊饲喂', '尺寸细节质感'];
+        const formattedTrustLabels = trustLabels.map(l => formatLabel(l, 8));
+
+        new Chart(ctxTrust, {
+            type: 'polarArea',
+            data: {
+                labels: formattedTrustLabels,
+                datasets: [{
+                    data: [98, 92, 85, 90, 80],
+                    backgroundColor: [
+                        'rgba(0, 31, 63, 0.7)',
+                        'rgba(255, 215, 0, 0.7)',
+                        'rgba(100, 116, 139, 0.7)',
+                        'rgba(59, 130, 246, 0.7)',
+                        'rgba(22, 101, 52, 0.7)'
+                    ]
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: { r: { display: false } }
+            }
+        });
+    </script>
+</body>
+</html>
